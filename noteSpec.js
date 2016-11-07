@@ -3,6 +3,9 @@ function storesTextOnCreation(){
 
   if (note.textReturn() != "text") {
     throw "False" }
-};
+    else {
+      console.log("true")
+    }
+  };
 
-storesTextOnCreation()
+  storesTextOnCreation()
