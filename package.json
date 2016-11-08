@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/roryai/note-app/issues"
   },
-  "homepage": "https://github.com/roryai/note-app#readme"
+  "homepage": "https://github.com/roryai/note-app#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
 }
