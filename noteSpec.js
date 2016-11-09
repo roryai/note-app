@@ -34,7 +34,7 @@ function ViewReturnHTMLstring() {
   noteList.storeNote("harry potter");
   noteList.storeNote("pray, eat, eat");
   view.stringExtractor();
-  if (view.stringJoiner() == "<ul><li><div>harry potter</div></li><li><div>pray, eat, eat</div></li></ul>") {
+  if (view.htmlJoiner() == "<ul><li><div>harry potter</div></li><li><div>pray, eat, eat</div></li></ul>") {
     console.log("html success'")
   } else {
     console.log("false")
