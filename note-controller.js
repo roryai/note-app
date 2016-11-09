@@ -6,9 +6,11 @@
   }
 
   Instantiate.prototype.htmlList = function () {
-    this.noteList.storeNote("harry potter");
+    this.noteList.storeNote("input=id text");
+    this.noteList.storeNote("pray, eat monkey");
+    this.noteList.storeNote("pray, eat monkey, eat");
+    this.noteList.storeNote("pray, monkey, eat");
     this.noteList.storeNote("pray, eat, eat");
-    this.view.stringExtractor();
     var joiner = this.view.htmlJoiner();
     return joiner;
   };
