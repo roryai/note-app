@@ -1,27 +1,27 @@
 function storesTextOnCreation(){
   var note = new Note("text")
-  if (note.textReturn() != "text") {
-    console.log("false")
+  if (note.textReturn() == "text") {
+    console.log("storesTextOnCreation")
   } else {
-    console.log("true")
+    console.log("false")
   }
 };
 
 function noteListStoresNote() {
   var noteList = new NoteList();
   noteList.storeNote("test text")
-  if (noteList.noteArray[0].text != "test text") {
-    console.log("false")
+  if (noteList.noteArray[0].text == "test text") {
+    console.log("noteListStoresNote")
   } else {
-    console.log("true")
+    console.log("false")
   }
 };
 
-function noteListPrintsNotes() {
+function noteListReturnsStringArray() {
   var noteList = new NoteList();
   noteList.storeNote("harry potter");
-  if (noteList.notePrinter() == noteList.noteArray) {
-    console.log("yer a wizard, 'arry'")
+  if (noteList.stringArray() == noteList.noteArray[0].text) {
+    console.log("noteListReturnsStringArray")
   } else {
     console.log("false")
   }
@@ -33,17 +33,26 @@ function ViewReturnHTMLstring() {
   var view = new NoteListView(noteList);
   noteList.storeNote("harry potter");
   noteList.storeNote("pray, eat, eat");
-  view.stringExtractor();
-  if (view.htmlJoiner() == "<ul><li><div>harry potter</div></li><li><div>pray, eat, eat</div></li></ul>") {
-    console.log("html success'")
+  if (view.htmlJoiner() == "<ul><li><div>harry potter</li></div><li><div>pray, eat, eat</li></div></ul>") {
+    console.log("ViewReturnHTMLstring")
+  } else {
+    console.log("false")
+  }
+};
+
+function singleNoteViewReturnsHTML() {
+  var note = new Note("harry potter");
+  singleNote = new SingleNote(note);
+  if (singleNote.htmlNote() == "<div>harry potter</div>") {
+    console.log("singleNoteViewReturnsHTML")
   } else {
     console.log("false")
   }
 };
 
 
-
 storesTextOnCreation();
 noteListStoresNote();
-noteListPrintsNotes();
+noteListReturnsStringArray();
 ViewReturnHTMLstring();
+singleNoteViewReturnsHTML();
