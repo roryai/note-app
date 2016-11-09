@@ -6,9 +6,9 @@
   }
 
   Instantiate.prototype.htmlList = function () {
-    this.noteList.storeNote("input=id text");
-    this.noteList.storeNote("pray, eat monkey");
-    this.noteList.storeNote("pray, eat monkey, eat");
+    this.noteList.storeNote("input=id text, do somenthing that you like");
+    this.noteList.storeNote("pray, eat monkey, pray, jump, run");
+    this.noteList.storeNote("pray, eat monkey, eat, all right");
     this.noteList.storeNote("pray, monkey, eat");
     this.noteList.storeNote("pray, eat, eat");
     var joiner = this.view.htmlJoiner();

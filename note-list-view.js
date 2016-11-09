@@ -4,10 +4,14 @@
     this.noteList = noteList;
   }
 
+  var twentyCharacters = function (string) {
+    return (string.slice(0, 20) + " ...");
+  };
+
   NoteListView.prototype.htmlWrapper = function () {
     var stringArr = this.noteList.stringArray();
     var resultArray = stringArr.map(function(string) {
-      return ("<li><div>") + string + ("</li></div>");
+      return ("<li><div>") + twentyCharacters(string) + ("</li></div>");
     }).join("");
     return resultArray;
   };
