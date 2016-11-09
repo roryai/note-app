@@ -12,10 +12,5 @@ NoteList.prototype.storeNote = function(text) {
 };
 
 exports.NoteList = NoteList;
-// exports.notePrinter = this.notePrinter;
-// exports.storeNote = this.storeNote;
 
 })(this);
-
-string = array.join(</div></li><li><div>)
-return "<ul><li><div>" + string + "</div></li></ul>"

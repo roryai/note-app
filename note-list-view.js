@@ -11,11 +11,16 @@
     }
   };
 
-  NoteListView.prototype.stringJoiner = function () {
-    var string = [];
-    string = this.stringArray.join("</div></li><li><div>");
-    return ("<ul><li><div>" + string + "</div></li></ul>");
-};
+  NoteListView.prototype.htmlWrapper = function () {
+    var array = this.stringArray.map(function(string) {
+      return ("<li><div>") + string + ("</li></div>");
+    }).join("");
+    return array;
+  };
+
+  NoteListView.prototype.htmlJoiner = function () {
+    return ("<ul>" + this.htmlWrapper() + "</ul>");
+  };
 
 exports.NoteListView = NoteListView;
 
