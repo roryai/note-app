@@ -41,6 +41,8 @@ function ViewReturnHTMLstring() {
   }
 };
 
+
+
 storesTextOnCreation();
 noteListStoresNote();
 noteListPrintsNotes();
