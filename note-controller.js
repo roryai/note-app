@@ -47,10 +47,6 @@
       this.noteList.storeNote(new Note(text, id));
   };
 
-  // NoteController.prototype.singleNoteTest = function () {
-  //   this.singleNoteView.htmlNote()
-  // };
-
   exports.NoteController = NoteController;
 
 })(this);
