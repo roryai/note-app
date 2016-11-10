@@ -50,6 +50,15 @@ function singleNoteViewReturnsHTML() {
   }
 };
 
+function assignUniqueIdToNote() {
+  
+  if (true) {
+    console.log("assignUniqueIdToNote")
+  } else {
+    console.log("false")
+  }
+};
+
 
 storesTextOnCreation();
 noteListStoresNote();
