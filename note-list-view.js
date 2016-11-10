@@ -5,7 +5,11 @@
   }
 
   var twentyCharacters = function (string) {
-    return (string.slice(0, 20) + " ...");
+    if (string.length > 20) {
+      return (string.slice(0, 20) + "...");
+    } else {
+      return string;
+    }
   };
 
   NoteListView.prototype.htmlWrapper = function () {
