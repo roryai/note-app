@@ -5,6 +5,7 @@
     this.noteListView = new NoteListView(this.noteList);
     this.noteObj = new Note("Some stuff what i rote")
     this.singleNoteView = new SingleNoteView(this.noteObj)
+    this.noteCounter = 0;
   }
 
   NoteController.prototype.divCreator = function (divId) {
