@@ -8,9 +8,10 @@ function storesTextOnCreation(){
 };
 
 function noteListStoresNote() {
+  var note = new Note("text");
   var noteList = new NoteList();
-  noteList.storeNote("test text")
-  if (noteList.noteArray[0].text == "test text") {
+  noteList.storeNote(note)
+  if (noteList.noteArray[0].text == "text") {
     console.log("noteListStoresNote")
   } else {
     console.log("false")
@@ -18,8 +19,9 @@ function noteListStoresNote() {
 };
 
 function noteListReturnsStringArray() {
+  var note = new Note("harry potter");
   var noteList = new NoteList();
-  noteList.storeNote("harry potter");
+  noteList.storeNote(note);
   if (noteList.stringArray() == noteList.noteArray[0].text) {
     console.log("noteListReturnsStringArray")
   } else {
@@ -29,11 +31,13 @@ function noteListReturnsStringArray() {
 
 
 function ViewReturnHTMLstring() {
+  var note = new Note("hi chris");
+  var note2 = new Note("hi rory");
   var noteList = new NoteList();
-  var view = new NoteListView(noteList);
-  noteList.storeNote("harry potter");
-  noteList.storeNote("pray, eat, eat");
-  if (view.htmlJoiner() == "<ul><li><div>harry potter</li></div><li><div>pray, eat, eat</li></div></ul>") {
+  var noteListView = new NoteListView(noteList);
+  noteList.storeNote(note);
+  noteList.storeNote(note2);
+  if (noteListView.htmlJoiner() == "<ul><li><div>hi chris</li></div><li><div>hi rory</li></div></ul>") {
     console.log("ViewReturnHTMLstring")
   } else {
     console.log("false")
@@ -42,8 +46,8 @@ function ViewReturnHTMLstring() {
 
 function singleNoteViewReturnsHTML() {
   var note = new Note("harry potter");
-  singleNote = new SingleNote(note);
-  if (singleNote.htmlNote() == "<div>harry potter</div>") {
+  singleNoteView = new SingleNoteView(note);
+  if (singleNoteView.htmlNote() == "<div>harry potter</div>") {
     console.log("singleNoteViewReturnsHTML")
   } else {
     console.log("false")
@@ -51,7 +55,7 @@ function singleNoteViewReturnsHTML() {
 };
 
 function assignUniqueIdToNote() {
-  
+
   if (true) {
     console.log("assignUniqueIdToNote")
   } else {

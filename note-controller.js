@@ -3,8 +3,8 @@
   function NoteController(){
     this.noteList = new NoteList();
     this.noteListView = new NoteListView(this.noteList);
-    this.noteObj = new Note("Some stuff what i rote")
-    this.singleNoteView = new SingleNoteView(this.noteObj)
+    this.noteObj = new Note("Some stuff what i rote");
+    this.singleNoteView = new SingleNoteView(this.noteObj);
     this.noteCounter = 0;
   }
 
@@ -29,11 +29,22 @@
     noteController.divPopulator(this.singleNoteView.htmlNote(), "single");
   };
 
+
   NoteController.prototype.testHtmlList = function () {
-    this.noteList.storeNote("pray, eat monkey, pray, jump, run");
-    this.noteList.storeNote("pray, eat, eat");
+    this.newNote("pray, eat monkey, pray, jump, run");
+    this.newNote("pray, eat, eat");
     var joiner = this.noteListView.htmlJoiner();
     return joiner;
+  };
+
+  NoteController.prototype.idIncrementer = function () {
+    this.noteCounter++;
+  };
+
+  NoteController.prototype.newNote = function (text) {
+      var id = this.noteCounter;
+      this.idIncrementer();
+      this.noteList.storeNote(new Note(text, id));
   };
 
   // NoteController.prototype.singleNoteTest = function () {

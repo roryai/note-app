@@ -3,8 +3,8 @@ function NoteList(){
   this.noteArray = [];
 };
 
-NoteList.prototype.storeNote = function(text) {
-  this.noteArray.push(new Note(text));
+NoteList.prototype.storeNote = function(noteObj) {
+  this.noteArray.push(noteObj);
 };
 
 NoteList.prototype.stringArray = function () {
