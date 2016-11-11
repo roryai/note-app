@@ -1,3 +1,16 @@
+function assignUniqueIdToNote() {
+  var noteController = new NoteController
+  var note1 = noteController.newNote("text")
+  var note2 = noteController.newNote("text")
+  // console.log(noteController.noteList.noteArray)
+  // console.log(noteController.noteList.noteArray[1].id)
+  if (noteController.noteList.noteArray[1].id == 1) {
+    console.log("assignUniqueIdToNote");
+  } else {
+    console.log("false")
+  }
+};
+
 function storesTextOnCreation(){
   var note = new Note("text")
   if (note.textReturn() == "text") {
@@ -37,7 +50,8 @@ function ViewReturnHTMLstring() {
   var noteListView = new NoteListView(noteList);
   noteList.storeNote(note);
   noteList.storeNote(note2);
-  if (noteListView.htmlJoiner() == "<ul><li><div>hi chris</li></div><li><div>hi rory</li></div></ul>") {
+
+  if (noteListView.htmlJoiner() == "<ul><div><li>hi chris</li></div><div><li>hi rory</li></div></ul>") {
     console.log("ViewReturnHTMLstring")
   } else {
     console.log("false")
@@ -54,21 +68,9 @@ function singleNoteViewReturnsHTML() {
   }
 };
 
-function assignUniqueIdToNote() {
-  var noteController = new NoteController
-  var note1 = noteController.newNote("text")
-  var note2 = noteController.newNote("text")
-  if (noteController.noteList.noteArray[1].id == 1) {
-    console.log("assignUniqueIdToNote");
-  } else {
-    console.log("false")
-  }
-};
-
-
+assignUniqueIdToNote();
 storesTextOnCreation();
 noteListStoresNote();
 noteListReturnsStringArray();
 ViewReturnHTMLstring();
 singleNoteViewReturnsHTML();
-assignUniqueIdToNote();
