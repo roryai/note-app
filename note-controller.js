@@ -3,8 +3,7 @@
   function NoteController(){
     this.noteList = new NoteList();
     this.noteListView = new NoteListView(this.noteList);
-    this.noteObj = new Note("Some stuff what i rote");
-    this.singleNoteView = new SingleNoteView(this.noteObj);
+    this.singleNoteView = new SingleNoteView();
     this.noteCounter = 0;
   }
 
@@ -14,19 +13,14 @@
     document.body.insertBefore(div, document.body.firstChild);
   };
 
-  NoteController.prototype.divPopulator = function (html, divId) {
-    var element = document.getElementById(divId);
-    element.innerHTML = html;
-  };
-
   NoteController.prototype.divInit = function () {
-    noteController.divCreator("app");
-    noteController.divPopulator(noteController.testHtmlList(), "app");
+    this.noteListView.divCreator("app");
+    this.noteListView.divPopulator(noteController.testHtmlList(), "app");
   };
 
   NoteController.prototype.singleNoteDivInit = function () {
-    noteController.divCreator("single");
-    noteController.divPopulator(this.singleNoteView.htmlNote(), "single");
+    this.noteListView.divCreator("single");
+    this.noteListView.divPopulator(this.singleNoteView.htmlNote(), "single");
   };
 
 
@@ -37,14 +31,8 @@
     return joiner;
   };
 
-  NoteController.prototype.idIncrementer = function () {
-    this.noteCounter++;
-  };
-
   NoteController.prototype.newNote = function (text) {
-      var id = this.noteCounter;
-      this.idIncrementer();
-      this.noteList.storeNote(new Note(text, id));
+      this.noteList.storeNote(new Note(text));
   };
 
   exports.NoteController = NoteController;
