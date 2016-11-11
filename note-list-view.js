@@ -15,27 +15,48 @@
   NoteListView.prototype.htmlArrayWrapper = function () {
     var stringArr = this.noteList.stringArray();
     var resultArray = stringArr.map(function(string) {
+// this line adds the tags to each string, then puts them into the array
       return ("<div><li>") + twentyCharacters(string) + ("</li></div>");
     }).join("");
     return resultArray;
   };
 
-  NoteListView.prototype.singleNoteLinkCreator = function (noteObj) {
-    anchor =  "<a href='http://localhost:8080notes/" + noteObj.idReturn() + "'>"
-              + twentyCharacters(noteObj.textReturn()) + "</a>";
-    return "<div><li>" + anchor + "</li></div>";
-  };
-
-  // <div><li><a href="http://localhost:8080#notes/1"></a></li></div>
-
   NoteListView.prototype.htmlJoiner = function () {
     return ("<ul>" + this.htmlArrayWrapper() + "</ul>");
   };
 
-  // NoteListView.prototype.linkCreator = function (noteObj) {
-  //   var wrapped = this.htmlSingleNoteWrapper(noteObj);
-  //
-  // };
+  // <div><li><a href="http://localhost:8080#notes/1">sdfgsdfg</a></li></div>
+
+  var noteToAnchor = function (noteObj) {
+    return "<a href='http://localhost:8080#notes/" + noteObj.idReturn() + "'>"
+           + twentyCharacters(noteObj.textReturn()) + "</a>";
+  };
+
+  NoteListView.prototype.returnsArrayOfAnchors = function () {
+    return this.noteList.noteArray.map(function(noteObj) {
+      return noteToAnchor(noteObj);
+    })
+  };
+
+  NoteListView.prototype.eachIntoLi = function (array) {
+    return array.map(function(anchor) {
+      return "<li>" + anchor + "</li>";;
+    }).join("");
+  };
+
+  NoteListView.prototype.intoDiv = function (string) {
+    return "<div>" + string + "</div>";
+  };
+
+  NoteListView.prototype.intoUl = function (string) {
+    return "<ul>" + string + "</ul>";
+  };
+
+  NoteListView.prototype.createsListOfLinks = function () {
+    return this.intoUl((this.intoDiv(this.eachIntoLi(this.returnsArrayOfAnchors()))));
+  };
+
+
 
   NoteListView.prototype.divCreator = function (divId) {
     div = document.createElement("div");
@@ -53,3 +74,28 @@
   exports.NoteListView = NoteListView;
 
 })(this);
+
+// NoteListView.prototype.htmlArrayWrapper = function () {
+//   var stringArr = this.noteList.stringArray();
+//   var resultArray = stringArr.map(function(string) {
+// // this line adds the tags to each string, then puts them into the array
+//     return ("<div><li>") + twentyCharacters(string) + ("</li></div>");
+//   }).join("");
+//   return resultArray;
+// };
+//
+// NoteListView.prototype.htmlJoiner = function () {
+//   return ("<ul>" + this.htmlArrayWrapper() + "</ul>");
+// };
+
+//
+// NoteListView.prototype.singleNoteLinkCreator = function (noteObj) {
+//   anchor =  "<a href='http://localhost:8080notes/" + noteObj.idReturn() + "'>"
+//             + twentyCharacters(noteObj.textReturn()) + "</a>";
+//   return "<div><li>" + anchor + "</li></div>";
+// };
+
+// NoteListView.prototype.linkCreator = function (noteObj) {
+//   var wrapped = this.htmlSingleNoteWrapper(noteObj);
+//
+// };

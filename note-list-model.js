@@ -7,6 +7,10 @@ NoteList.prototype.storeNote = function(noteObj) {
   this.noteArray.push(noteObj);
 };
 
+NoteList.prototype.getsNoteArray = function () {
+  return this.noteArray;
+};
+
 NoteList.prototype.stringArray = function () {
   var stringArr = this.noteArray.map(function(noteObj){
     return noteObj.text
