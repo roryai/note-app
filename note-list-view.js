@@ -7,25 +7,8 @@
   var twentyCharacters = function (string) {
     if (string.length > 20) {
       return (string.slice(0, 20) + "...");
-    } else {
-      return string;
-    }
+    } else {return string};
   };
-
-  NoteListView.prototype.htmlArrayWrapper = function () {
-    var stringArr = this.noteList.stringArray();
-    var resultArray = stringArr.map(function(string) {
-// this line adds the tags to each string, then puts them into the array
-      return ("<div><li>") + twentyCharacters(string) + ("</li></div>");
-    }).join("");
-    return resultArray;
-  };
-
-  NoteListView.prototype.htmlJoiner = function () {
-    return ("<ul>" + this.htmlArrayWrapper() + "</ul>");
-  };
-
-  // <div><li><a href="http://localhost:8080#notes/1">sdfgsdfg</a></li></div>
 
   var noteToAnchor = function (noteObj) {
     return "<a href='http://localhost:8080#notes/" + noteObj.idReturn() + "'>"
@@ -53,10 +36,8 @@
   };
 
   NoteListView.prototype.createsListOfLinks = function () {
-    return this.intoUl((this.intoDiv(this.eachIntoLi(this.returnsArrayOfAnchors()))));
+    return this.intoUl((this.eachIntoLi(this.returnsArrayOfAnchors())));
   };
-
-
 
   NoteListView.prototype.divCreator = function (divId) {
     div = document.createElement("div");
@@ -69,14 +50,12 @@
     element.innerHTML = html;
   };
 
-
-
   exports.NoteListView = NoteListView;
 
 })(this);
 
 // NoteListView.prototype.htmlArrayWrapper = function () {
-//   var stringArr = this.noteList.stringArray();
+//   var stringArr = this.noteList.getStringArray();
 //   var resultArray = stringArr.map(function(string) {
 // // this line adds the tags to each string, then puts them into the array
 //     return ("<div><li>") + twentyCharacters(string) + ("</li></div>");
@@ -99,3 +78,18 @@
 //   var wrapped = this.htmlSingleNoteWrapper(noteObj);
 //
 // };
+
+//   NoteListView.prototype.htmlArrayWrapper = function () {
+//     var stringArr = this.noteList.getStringArray();
+//     var resultArray = stringArr.map(function(string) {
+// // this line adds the tags to each string, then puts them into the array
+//       return ("<div><li>") + twentyCharacters(string) + ("</li></div>");
+//     }).join("");
+//     return resultArray;
+//   };
+//
+//   NoteListView.prototype.htmlJoiner = function () {
+//     return ("<ul>" + this.htmlArrayWrapper() + "</ul>");
+//   };
+
+  // <div><li><a href="http://localhost:8080#notes/1">s </a></li></div>
