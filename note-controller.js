@@ -19,12 +19,19 @@
     window.addEventListener("hashchange", this.showClickedNoteOnPage);
   };
 
-  NoteController.prototype.showClickedNoteOnPage = function () {
 
-    var aa = this.getNoteTextById(this.getNoteIdFromURL(window.location));
-    console.log(aa);
-    this.exportNoteTextToAppDiv(aa);
+
+  NoteController.prototype.showClickedNoteOnPage = function () {
+    // this.exportNoteTextToAppDiv(this.getNoteTextById(this.getNoteIdFromURL(window.location)));
+    noteController.exportNoteTextToAppDiv(noteController.getNoteTextById(noteController.getNoteIdFromURL(window.location)));
   };
+
+  // THE CODE IS WORKING NOW BUT ONLY BECAUSE I'VE REFERRED TO THE INSTANTIATED
+  // 'noteController' ON LINE 26.
+  //
+  // TO REPLICATE THE BUG, COMMENT OUT LINE 26 AND THE THREE FUNCTIONS BELOW,
+  // AND UNCOMMENT OUT LINE 25. SEE INSTRUCTIONS IN INDEX.HTML FOR THAT FILE.
+  //
 
   NoteController.prototype.getNoteIdFromURL = function (location) {
     return location.hash.split("#")[1];
