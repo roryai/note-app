@@ -1,4 +1,5 @@
 (function(exports){
+  
   function SingleNoteView(noteObj){
     this.noteObj = noteObj;
   };
