@@ -50,11 +50,11 @@
   };
 
 
-  
 
-  NoteListView.prototype.getNoteIdFromURL = function (location) {
-    return location.hash.split("#")[1];
-  };
+  //
+  // NoteListView.prototype.getNoteIdFromURL = function (location) {
+  //   return location.hash.split("#")[1];
+  // };
 
 
   exports.NoteListView = NoteListView;
