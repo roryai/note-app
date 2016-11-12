@@ -15,6 +15,40 @@
     <script src="single-note-view.js"></script>
     <script src="note-controller.js"></script>
     <script src="start.js"></script>
-    <!-- <script>noteController.eventListener()</script> -->
+    <script>
+    noteController.eventListener();
+
+    function eventListener() {
+      window.addEventListener("hashchange", showClickedNoteOnPage);
+    };
+
+    function showClickedNoteOnPage() {
+      var aa = getNoteTextById(getNoteIdFromURL(window.location));
+      console.log(aa);
+      this.exportNoteTextToAppDiv(aa);
+    };
+
+    function getNoteIdFromURL(location) {
+      return location.hash.split("#")[1];
+    };
+
+    function getNoteTextById(id) {
+      console.log(noteController);
+      console.log(noteController.noteList);
+      console.log(noteController.noteList.noteArray);
+      var noteArray = noteController.noteList.noteArray;
+      for (i = 0; i < noteArray.length; i++) {
+        if (noteArray[i].id == [id]) {
+          return noteArray[i].text
+        }
+      }
+    };
+
+    exportNoteTextToAppDiv = function (text) {
+      document.getElementById("test").innerHTML = text;
+    };
+
+    </script>
+    <!-- <script>noteController.eventLiscript> -->
   </body>
 </html>
