@@ -11,7 +11,7 @@
   };
 
   var noteToAnchor = function (noteObj) {
-    return "<a href='http://localhost:8080#notes/" + noteObj.idReturn() + "'>"
+    return "<a href='http://localhost:8080#" + noteObj.idReturn() + "'>"
            + twentyCharacters(noteObj.textReturn()) + "</a>";
   };
 
@@ -46,9 +46,16 @@
   };
 
   NoteListView.prototype.divPopulator = function (html, divId) {
-    element = document.getElementById(divId);
-    element.innerHTML = html;
+    document.getElementById(divId).innerHTML = html;
   };
+
+
+  
+
+  NoteListView.prototype.getNoteIdFromURL = function (location) {
+    return location.hash.split("#")[1];
+  };
+
 
   exports.NoteListView = NoteListView;
 

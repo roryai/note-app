@@ -11,32 +11,31 @@
     this.noteListView.divPopulator(this.noteListView.createsListOfLinks(), "app");
   };
 
+
+
+
+
+  NoteController.prototype.eventListener = function () {
+    window.addEventListener("hashchange", this.showClickedNoteOnPage())
+  };
+
+  NoteController.prototype.showClickedNoteOnPage = function () {
+    console.log(this.noteListView.getNoteIdFromURL(window.location))
+    console.log(this.noteList.getNoteTextById(this.noteListView.getNoteIdFromURL(window.location)))
+    console.log(this.exportNoteTextToDiv(this.noteList.getNoteTextById(this.noteListView.getNoteIdFromURL(window.location))))
+    this.exportNoteTextToDiv(this.noteList.getNoteTextById(this.noteListView.getNoteIdFromURL(window.location)));
+  };
+
+  NoteController.prototype.exportNoteTextToDiv = function (text) {
+    console.log(text)
+    console.log(document.getElementById("test"))
+
+    var b =document.getElementById("test");
+    b.innerHTML = text;
+  };
+
   NoteController.prototype.newNote = function (text) {
       this.noteList.storeNote(new Note(text));
-  };
-
-  NoteController.prototype.eventListener = function () {
-
-  };
-
-
-
-  NoteController.prototype.getNoteIdFromURL = function (location) {
-    return location.hash.split("#")[1];
-  };
-
-  NoteController.prototype.getNoteTextById = function (id) {
-    for (i = 0; i < this.noteList.noteArray.length; i++) {
-      if (this.noteList.noteArray[i].id == [id]) {
-        return this.noteList.noteArray[i].text
-      }
-    }
-  };
-
-  NoteController.prototype.showNote = function (text) {
-    document
-        .getElementById("app")
-        .innterHTML = text;
   };
 
   exports.NoteController = NoteController;
