@@ -3,7 +3,6 @@
   function NoteController(){
     this.noteList = new NoteList();
     this.noteListView = new NoteListView(this.noteList);
-    // this.singleNoteView = new SingleNoteView(new Note);
   }
 
   NoteController.prototype.divInit = function () {
@@ -19,30 +18,8 @@
     window.addEventListener("hashchange", this.showClickedNoteOnPage);
   };
 
-
-
   NoteController.prototype.showClickedNoteOnPage = function () {
-    // this.exportNoteTextToAppDiv(this.getNoteTextById(this.getNoteIdFromURL(window.location)));
-    noteController.exportNoteTextToAppDiv(noteController.getNoteTextById(noteController.getNoteIdFromURL(window.location)));
-  };
-
-  // THE CODE IS WORKING NOW BUT ONLY BECAUSE I'VE REFERRED TO THE INSTANTIATED
-  // 'noteController' ON LINE 26.
-  //
-  // TO REPLICATE THE BUG, COMMENT OUT LINE 26 AND THE THREE FUNCTIONS BELOW,
-  // AND UNCOMMENT OUT LINE 25. SEE INSTRUCTIONS IN INDEX.HTML FOR THAT FILE.
-  //
-
-  NoteController.prototype.getNoteIdFromURL = function (location) {
-    return location.hash.split("#")[1];
-  };
-
-  NoteController.prototype.getNoteTextById = function (id) {
-    for (i = 0; i < this.noteList.noteArray.length; i++) {
-      if (this.noteList.noteArray[i].id == [id]) {
-        return this.noteList.noteArray[i].text
-      }
-    }
+    noteController.exportNoteTextToAppDiv(noteController.noteList.getNoteTextById(noteController.noteListView.getNoteIdFromURL(window.location)));
   };
 
   NoteController.prototype.exportNoteTextToAppDiv = function (text) {

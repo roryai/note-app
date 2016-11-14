@@ -19,17 +19,13 @@ NoteList.prototype.getStringArray = function () {
   return stringArr;
 };
 
-
-
-
-
-// NoteList.prototype.getNoteTextById = function (id) {
-//   for (i = 0; i < this.noteArray.length; i++) {
-//     if (this.noteArray[i].id == [id]) {
-//       return this.noteArray[i].text
-//     }
-//   }
-// };
+NoteList.prototype.getNoteTextById = function (id) {
+  for (i = 0; i < this.noteArray.length; i++) {
+    if (this.noteArray[i].id == [id]) {
+      return this.noteArray[i].text
+    }
+  }
+};
 
 exports.NoteList = NoteList;
 
