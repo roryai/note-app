@@ -5,4 +5,4 @@ var note1 = noteController.newNote("Harry Potter");
 var note2 = noteController.newNote("Dirty Harry");
 
 noteController.divInit();
-noteController.eventListener();
+noteController.eventListeners();

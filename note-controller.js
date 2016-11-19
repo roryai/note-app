@@ -15,8 +15,19 @@
       this.noteList.storeNote(new Note(text));
   };
 
-  NoteController.prototype.eventListener = function () {
+  NoteController.prototype.eventListeners = function () {
+    this.hashChangeListener();
+    this.submitListener();
+  };
+
+  NoteController.prototype.hashChangeListener = function () {
     window.addEventListener("hashchange", this.showClickedNoteOnPage);
+  };
+
+  NoteController.prototype.submitListener = function () {
+    window.addEventListener("submit", function(submitEvent) {
+      submitEvent.preventDefault();
+    })
   };
 
   NoteController.prototype.showClickedNoteOnPage = function () {
