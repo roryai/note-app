@@ -10,4 +10,4 @@ To run, install http-server using npm (node package manager) using this command:
 
 To run the server, navigate to the project folder and run the server using this command:
 
-```http-server```
+``` http-server```
