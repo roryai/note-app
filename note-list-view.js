@@ -7,7 +7,9 @@
   var twentyCharacters = function (string) {
     if (string.length > 20) {
       return (string.slice(0, 20) + "...");
-    } else {return string};
+    } else {
+      return string
+    };
   };
 
   var noteToAnchor = function (noteObj) {

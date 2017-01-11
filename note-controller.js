@@ -26,12 +26,12 @@
 
   NoteController.prototype.submitListener = function () {
     window.addEventListener("submit", function(submitEvent) {
-      console.log("submit event:")
-      console.log(submitEvent)
-      console.log(submitEvent.target.text.value)
+      noteController.newNote(submitEvent.target.text.value)
       submitEvent.preventDefault();
     })
   };
+
+
 
   NoteController.prototype.showClickedNoteOnPage = function () {
     noteController.exportNoteTextToAppDiv(noteController.noteList.getNoteTextById(noteController.noteListView.getNoteIdFromURL(window.location)));
