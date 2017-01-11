@@ -26,12 +26,12 @@
 
   NoteController.prototype.submitListener = function () {
     window.addEventListener("submit", function(submitEvent) {
-      noteController.newNote(submitEvent.target.text.value)
+
       submitEvent.preventDefault();
+      noteController.newNote(submitEvent.target.text.value)
+      noteController.noteListView.divPopulator(noteController.noteListView.createsListOfLinks(), "app")
     })
   };
-
-
 
   NoteController.prototype.showClickedNoteOnPage = function () {
     noteController.exportNoteTextToAppDiv(noteController.noteList.getNoteTextById(noteController.noteListView.getNoteIdFromURL(window.location)));
@@ -40,6 +40,10 @@
   NoteController.prototype.exportNoteTextToAppDiv = function (text) {
     document.getElementById("test").innerHTML = text;
   };
+
+  // NoteController.prototype.addNewNoteToAppDiv = function () {
+  //
+  // };
 
   exports.NoteController = NoteController;
 
