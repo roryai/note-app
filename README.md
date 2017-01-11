@@ -6,8 +6,8 @@ The app allows you to record notes and display them by clicking on a link. The l
 
 To run, install http-server using npm (node package manager) using this command:
 
-```npm install http-server -g
+```npm install http-server -g```
 
 To run the server, navigate to the project folder and run the server using this command:
 
-```http-server
+```http-server```
