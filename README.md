@@ -1,12 +1,13 @@
-# Writing a frontend, single page app using only pure JavaScript (further JS)
+# Objective: to write a frontend, single page app using only pure JavaScript
 
-## Learning objectives
+This is an exercise in well written object oriented javaScript following the design principles of TDD, DRY, and single responsibility.
 
-### Concepts
+The app allows you to record notes and display them by clicking on a link. The link consists of the first 20 characters of the note.
 
-* Frontend, [single page](https://msdn.microsoft.com/en-gb/magazine/dn463786.aspx) web apps.
-* Events and event handlers.
-* Manipulating the [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
-* Ajax.
-* Frontend templating.
-* Frontend routing.
+To run, install http-server using npm (node package manager) using this command:
+
+```npm install http-server -g
+
+To run the server, navigate to the project folder and run the server using this command:
+
+```http-server

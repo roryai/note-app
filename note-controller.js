@@ -26,7 +26,6 @@
 
   NoteController.prototype.submitListener = function () {
     window.addEventListener("submit", function(submitEvent) {
-
       submitEvent.preventDefault();
       noteController.newNote(submitEvent.target.text.value)
       noteController.noteListView.divPopulator(noteController.noteListView.createsListOfLinks(), "app")
@@ -38,12 +37,8 @@
   };
 
   NoteController.prototype.exportNoteTextToAppDiv = function (text) {
-    document.getElementById("test").innerHTML = text;
+    document.getElementById("note-display").innerHTML = text;
   };
-
-  // NoteController.prototype.addNewNoteToAppDiv = function () {
-  //
-  // };
 
   exports.NoteController = NoteController;
 
