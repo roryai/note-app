@@ -15,3 +15,7 @@ To run the server, navigate to the project folder and run the server using this 
 ```
 http-server
 ```
+
+The page can then be viewed in your browser by navigating to this address:
+
+[http://localhost:8080](http://localhost:8080)
