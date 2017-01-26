@@ -41,18 +41,18 @@
     return this.intoUl((this.eachIntoLi(this.returnsArrayOfAnchors())));
   };
 
-  NoteListView.prototype.divCreator = function (divId) {
+  NoteListView.prototype.divCreator = function (divId, callback) {
     div = document.createElement("div");
     div.setAttribute("id", divId);
-
     document.body.insertBefore(div, document.body.firstChild);
+    callback(divId)
   };
 
   NoteListView.prototype.appDivTitleCreator = function () {
     var newH4 = document.createElement("h4");
     var textNode = document.createTextNode("Note List:");
     newH4.appendChild(textNode);
-    var appDiv = document.getElementById("tester");
+    var appDiv = document.getElementById("app");
     appDiv.insertBefore(newH4, appDiv.childNodes[0])
   };
 

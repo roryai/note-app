@@ -1,15 +1,18 @@
 #app {
   background-color: red;
   font-family: courier;
+  width: 30%
 }
 
 #note-display {
   background-color: green;
   font-family: courier;
+  width: 30%
 }
 
 #new-note-form {
   background-color: blue;
+  width: 30%
 }
 
 h4 {
