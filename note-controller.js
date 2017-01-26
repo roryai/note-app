@@ -6,7 +6,7 @@
   }
 
   NoteController.prototype.divInit = function () {
-    this.noteListView.divCreator("app", this.noteListView.appDivTitleCreator());
+    this.noteListView.divCreator("app");
 
     this.noteListView.divPopulator(this.noteListView.createsListOfLinks(), "app");
   };
