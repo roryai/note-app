@@ -1,11 +1,21 @@
 #app {
   background-color: red;
+  font-family: courier;
 }
 
 #note-display {
   background-color: green;
+  font-family: courier;
 }
 
 #new-note-form {
   background-color: blue;
+}
+
+h4 {
+  font-family: helvetica;
+}
+
+#text {
+  font-family: courier;
 }
