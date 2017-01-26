@@ -1,0 +1,11 @@
+#app {
+  background-color: red;
+}
+
+#note-display {
+  background-color: green;
+}
+
+#new-note-form {
+  background-color: blue;
+}

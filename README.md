@@ -1,6 +1,6 @@
-# Objective: to write a frontend, single page app using only pure JavaScript
+# Objective: to write a frontend, single page app using only vanilla JavaScript
 
-This is an exercise in well written object oriented javaScript following the design principles of TDD, DRY, and single responsibility.
+This is an exercise in object oriented javaScript following the design principles of TDD, DRY, and single responsibility.
 
 The app allows you to record notes and display them by clicking on a link. The link consists of the first 20 characters of the note.
 
